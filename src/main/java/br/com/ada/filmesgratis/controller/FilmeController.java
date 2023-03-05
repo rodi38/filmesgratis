@@ -2,19 +2,19 @@ package br.com.ada.filmesgratis.controller;
 
 import br.com.ada.filmesgratis.dao.FilmeDAO;
 import br.com.ada.filmesgratis.model.Filme;
-import br.com.ada.filmesgratis.model.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
+/*import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMapping;*/
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/filmes")
+@RequestMapping("/filme")
 public class FilmeController {
     @Autowired
     private FilmeDAO filmeDAO;
@@ -23,7 +23,7 @@ public class FilmeController {
     public String listar(Model model) {
         List<Filme> lista  = filmeDAO.buscarTodos();
         model.addAttribute("filmes", lista);
-        return "filmes_listar";
+        return "filme_listar";
     }
 
     @GetMapping("/editar/{id}")
@@ -54,6 +54,13 @@ public class FilmeController {
     public String adicionar(Filme filme) {
         filmeDAO.adicionar(filme);
         return "redirect:/filme";
+    }
+
+    @PostMapping("/assistir/{id}")
+    public String assistir(@PathVariable int id, Model model) {
+        Filme f = filmeDAO.buscarPorId(id);
+        model.addAttribute("filme", f);
+        return "assistir_filme";
     }
 
 

@@ -3,10 +3,10 @@ package br.com.ada.filmesgratis.model;
 import java.time.format.DateTimeFormatter;
 
 public class Filme {
-    private Integer id;
+    private Integer id = 1;
     private String titulo;
     private String genero;
-    private DateTimeFormatter duracao;
+    private String duracao;
     private String sinopse;
     private String imdb;
     private String imagem;
@@ -28,11 +28,11 @@ public class Filme {
         this.genero = genero;
     }
 
-    public DateTimeFormatter getDuracao() {
+    public String getDuracao() {
         return duracao;
     }
 
-    public void setDuracao(DateTimeFormatter duracao) {
+    public void setDuracao(String duracao) {
         this.duracao = duracao;
     }
 

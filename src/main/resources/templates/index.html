@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Casa dos filmes</title>
+    <link rel="stylesheet" href="../static/css/styleIndex.css">
+</head>
+<body>
+    <section class="container">
+
+        <header>
+            <img src="../static/img/headerlogo.png" width="150" height="150" alt="logo"
+                 th:src="@{img/headerlogo.png}">
+        </header>
+        <nav class="menu">
+            <ul>
+                <li href="#">Inicio</li>
+                <li href="#">Catalogo</li>
+                    <ul class="dropdown">
+                        <li href="#">sub1</li>
+                        <li href="#">sub2</li>
+                        <li href="#">sub3</li>
+                    </ul>
+                <li href="#">Sobre</li>
+            </ul>
+        </nav>
+
+    </section>
+    <a th:href="@{/filme}">Cadastro de filmes</a>
+</body>
+</html>

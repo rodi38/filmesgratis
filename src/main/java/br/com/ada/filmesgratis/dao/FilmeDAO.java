@@ -7,9 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 @Component
 public class FilmeDAO {
-    private List<Filme> filmes = new ArrayList<>();
+    private static List<Filme> filmes = new ArrayList<>();
+    private static int proximoId = 1;
 
     public void adicionar(Filme filme){
+        filme.setId(proximoId++);
         filmes.add(filme);
     }
     public void atualizar(Filme filme){
@@ -27,7 +29,7 @@ public class FilmeDAO {
     }
 
     public Filme buscarPorId(int id){
-        return filmes.stream().filter(f -> f.getId() == id).findFirst().get();
+        return filmes.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
     }
 
     public List<Filme> buscarTodos(){

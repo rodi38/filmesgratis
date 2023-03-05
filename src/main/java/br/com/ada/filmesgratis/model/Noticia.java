@@ -1,6 +1,7 @@
 package br.com.ada.filmesgratis.model;
 
 public class Noticia {
+    private Integer id;
     private String titulo;
     private String descricao;
     private String imagem;
@@ -36,5 +37,13 @@ public class Noticia {
 
     public void setAutor(String autor) {
         this.autor = autor;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
