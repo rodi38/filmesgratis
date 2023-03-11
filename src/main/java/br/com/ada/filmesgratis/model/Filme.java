@@ -11,8 +11,8 @@ public class Filme {
     private String sinopse;
     private double imdb;
     private String imagem;
-    private Integer like;
-    private Integer deslike;
+    private Integer like = 0;
+    private Integer deslike = 0;
     private String video;
     private boolean favorite = false;
 

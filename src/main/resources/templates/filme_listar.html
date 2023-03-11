@@ -47,9 +47,9 @@
 </div>
 <a th:href="@{/filme/novo}">Adicionar novo produto</a>
 
-    <div class="container" th:each="filme : ${filmes}">
-        <div>
-            <img th:src="${filme.getImagem()}" alt="imagem do filme">
+    <div class="container" >
+        <div class="container_listar" th:each="filme : ${filmes}">
+            <img th:src="${filme.getImagem()}" width="50px" height="40px" alt="imagem do filme">
             <p th:text="${filme.titulo}"></p>
             <a th:href="@{/filme/remover/{id}(id=${filme.id})}"
                onclick="return confirm('Tem certeza que deseja excluir este produto?')">Excluir</a>
