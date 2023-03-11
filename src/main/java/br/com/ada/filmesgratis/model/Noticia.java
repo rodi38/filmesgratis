@@ -7,6 +7,10 @@ public class Noticia {
     private String imagem;
     private String autor;
 
+    public Noticia(){
+
+    }
+
     public String getTitulo() {
         return titulo;
     }

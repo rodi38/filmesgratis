@@ -23,12 +23,11 @@ public class AtorDAO {
         }
     }
 
-    public void deletar(Ator ator){
-         atores.removeIf(a -> a.getNome() == ator.getNome());
+    public void deletar(int id){
+        atores.removeIf(a -> a.getId() == id);
     }
-
-    public Ator buscarPorNome(String nome){
-        return atores.stream().filter(a -> a.getNome() == nome).findFirst().get();
+    public Ator buscarPorId(int id){
+        return atores.stream().filter(a -> a.getId() == id).findFirst().get();
     }
 
     public List<Ator> buscarTodos(){

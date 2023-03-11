@@ -2,10 +2,12 @@ package br.com.ada.filmesgratis.dao;
 
 import br.com.ada.filmesgratis.model.Filme;
 import br.com.ada.filmesgratis.model.Noticia;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class NoticiaDAO {
 
     private static List<Noticia> noticias = new ArrayList<>();

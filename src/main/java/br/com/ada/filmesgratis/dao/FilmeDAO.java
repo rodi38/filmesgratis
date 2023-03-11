@@ -10,6 +10,7 @@ public class FilmeDAO {
     private static List<Filme> filmes = new ArrayList<>();
     private static int proximoId = 1;
 
+
     public void adicionar(Filme filme){
         filme.setId(proximoId++);
         filmes.add(filme);

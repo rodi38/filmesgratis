@@ -1,11 +1,31 @@
 package br.com.ada.filmesgratis.model;
 
 public class Ator {
-
+    private int id;
     private String nome;
     private String apelido;
     private String nacionalidade;
     private String imagem;
+
+    public Ator(int id, String nome, String apelido, String nacionalidade, String imagem) {
+        this.id = id;
+        this.nome = nome;
+        this.apelido = apelido;
+        this.nacionalidade = nacionalidade;
+        this.imagem = imagem;
+    }
+
+    public Ator(){
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -38,4 +58,6 @@ public class Ator {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
+
+
 }

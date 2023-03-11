@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de noticias</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Lista de Noticias</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>titulo</th>
+        <th>Descrição</th>
+        <th>imagem</th>
+        <th>autor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <div class="container-noticias" th:each="noticia : ${noticias}">
+        <div class="noticia">
+            <td th:text="${noticia.imagem}"></td>
+            <td th:text="${noticia.titulo}"></td>
+            <td th:text="${noticia.sinopse}"></td>
+            <td th:text="${noticia.imdb}"></td>
+            <td th:text="${noticia.like}"></td>
+            <td><a th:href="@{/filme/editar/{id}(id=${filme.id})}">Editar</a></td>
+            <td><a th:href="@{/filme/remover/{id}(id=${filme.id})}" onclick="return confirm('Tem certeza que deseja excluir este produto?')">Excluir</a></td>
+        </div>
+    </div>
+    </tbody>
+</table>
+<a th:href="@{/filme/novo}">Adicionar novo produto</a>
+</body>
+</html>

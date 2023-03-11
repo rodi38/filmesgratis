@@ -1,45 +1,53 @@
 body {
-    background-color: azure;
+    background-image: url("../img/filmebackground.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+#menu-principal {
+    //background-color: rgba(76, 73, 73, 0.32);
+    background-color: rgb(76 73 73 / 0%);
 }
 
-.menu ul {
-    display: flex;
+#search-addon {
+    background-color: rgba(0, 0, 0, 0);
+
+}
+#logo{
+    color: #fff;
+    background-color: #a9ff00;
+    border: 1px solid #000000;
+    border-radius: 0px 66px;
 }
 
-li {
-    display: block;
-    transition-duration: 0.5s;
+#iconsty{
+    color: white;
+    padding: 2px 0px 0px 7px;
 }
 
+/*.font_color {
 
-li:hover {
-    cursor: pointer;
 }
 
-ul li ul {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    transition: all 0.5s ease;
-    margin-top: 1rem;
-    left: 0;
-    display: none;
+.font_color:hover {
+}*/
+.navbar {
+    color: white;
+}
+.navbar-brand {
+    color: white;
+    transition: 300ms;
 }
 
-ul li:hover > ul,
-ul li ul:hover {
-    visibility: visible;
-    opacity: 1;
-    display: block;
+.navbar-brand:hover {
+    color: rgba(255, 255, 255, 0.55);
 }
 
-ul li ul li {
-    clear: both;
-    width: 100%;
+.linktemp {
+    list-style: none;
+}
+.form-label {
+    color: white;
 }

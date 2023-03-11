@@ -1,16 +1,31 @@
 package br.com.ada.filmesgratis.model;
 
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class Filme {
-    private Integer id = 1;
+    private Integer id;
     private String titulo;
     private String genero;
-    private String duracao;
+    private LocalTime duracao;
     private String sinopse;
-    private String imdb;
+    private double imdb;
     private String imagem;
-    private Integer like = 1;
+    private Integer like;
+    private Integer deslike;
+    private String video;
+    private boolean favorite = false;
+
+    public Filme(){
+
+    }
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -28,11 +43,11 @@ public class Filme {
         this.genero = genero;
     }
 
-    public String getDuracao() {
+    public LocalTime getDuracao() {
         return duracao;
     }
 
-    public void setDuracao(String duracao) {
+    public void setDuracao(LocalTime duracao) {
         this.duracao = duracao;
     }
 
@@ -44,11 +59,11 @@ public class Filme {
         this.sinopse = sinopse;
     }
 
-    public String getImdb() {
+    public double getImdb() {
         return imdb;
     }
 
-    public void setImdb(String imdb) {
+    public void setImdb(double imdb) {
         this.imdb = imdb;
     }
 
@@ -68,11 +83,27 @@ public class Filme {
         this.like = like;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getDeslike() {
+        return deslike;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setDeslike(Integer deslike) {
+        this.deslike = deslike;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
+    }
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
     }
 }
