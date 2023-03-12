@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Editar Produto</title>
+    <title>Adicionar Produto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -11,33 +11,53 @@
     <link rel="stylesheet" href="/css/styleIndex.css">
 </head>
 <body>
-<form th:object="${filme}" th:action="@{/filme/novo}" method="post">
-    <input type="text">
-    <label class="form-label" for="titulo">Titulo:</label>
-    <input class="form-control" type="text" id="titulo" name="titulo" th:field="*{titulo}" required/>
-    <br>
-    <label class="form-label" for="genero">Genero:</label>
-    <input class="form-control" type="text" id="genero" name="genero" th:field="*{genero}" required/>
-    <br>
-    <label class="form-label" for="duracao">Duração:</label>
-    <input class="form-control" type="text" id="duracao" name="duracao" th:field="*{duracao}" required/>
-    <br>
-    <label class="form-label" for="sinopse">Sinopse:</label>
-    <input class="form-control" type="text" id="sinopse" name="sinopse" th:field="*{sinopse}" required/>
-    <br>
-    <label class="form-label" for="imdb">Imdb:</label>
-    <input class="form-control" type="number" id="imdb" name="imdb" th:field="*{imdb}" required/>
-    <br>
-    <label class="form-label" for="imagem">Imagem:</label>
-    <input class="form-control" type="text" id="imagem" name="imagem" th:field="*{imagem}" required/>
-    <br>
-    <br>
-    <button type="submit" class="btn btn-success">Salvar</button>
-    <button class="btn btn-danger linktemp" >
-        <a th:href="@{/filme}">Cancelar</a>
-    </button>
+<div class="container container_cadastro">
 
-</form>
+    <form class="row g-3" th:object="${filme}" th:action="@{/filme/editar}" method="post">
+        <legend>Editar informações do filme</legend>
+        <div class="col-md-12">
+            <input class="form-control" type="hidden" id="id" name="id" th:field="*{id}"/>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="titulo">Titulo:</label>
+            <input class="form-control" type="text" id="titulo" name="titulo" th:field="*{titulo}" required/>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="genero">Genero:</label>
+            <input class="form-control" type="text" id="genero" name="genero" th:field="*{genero}" required/>
+        </div>
+        <div class="col-6">
+            <label class="form-label" for="duracao">Duração:</label>
+            <input class="form-control" type="text" id="duracao" name="duracao" th:field="*{duracao}" required/>
+        </div>
+        <div class="col-6">
+            <label class="form-label" for="sinopse">Sinopse:</label>
+            <input class="form-control" type="text" id="sinopse" name="sinopse" th:field="*{sinopse}" required/>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="imdb">Imdb:</label>
+            <input class="form-control" type="number" id="imdb" name="imdb" th:field="*{imdb}" required/>
+        </div>
+        <div class="col-md-12">
+            <!--<label class="form-label" for="imagem">Your Image File</label> teste futuro
+            <input class="form-control" type="file" name="imagem" id="imagem" accept="image/png, image/gif, image/jpeg" th:field="*{imagem}"/>-->
+            <label class="form-label" for="imagem">Imagem:</label>
+            <input class="form-control" type="text" id="imagem" name="imagem" th:field="*{imagem}" required/>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label" for="video">Video:</label>
+            <input class="form-control" type="text" id="video" name="video" th:field="*{video}" required/>
+        </div>
+
+        <div class="col-6">
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a class="btn btn-danger" th:href="@{/filme}">Cancelar</a>
+        </div>
+
+
+    </form>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
